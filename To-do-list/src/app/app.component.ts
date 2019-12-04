@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Todo } from 'src/models/todo.models';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,30 +8,36 @@ import { Todo } from 'src/models/todo.models';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'To do list';
+  public form: FormGroup;
   public todos: Todo[] = [];
 
-    constructor(){
+    constructor(private fb: FormBuilder) {
+      this.form = this.fb.group({
+        title: ['', Validators.compose([
+          Validators.minLength(3),
+          Validators.maxLength(60),
+          Validators.required
+        ])]
+      })
 
-      this.todos.push({ 
-      title: 'Study angular',
-      done: 'false'
-    })
+      this.load()
+    }
 
-    this.todos.push({
-      title: 'Study git',
-      done: 'false'
-    })
+    load() {
+      this.todos.push()
   }
 
   addTodo(){
-
+    const title = this.form.controls['title'].value
+    this.todos.push(new Todo( title, false ))
+    this.form.reset()
   }
 
-  rmTodo(todo: Todo){
+  rmTodo(todo: Todo) {
     const index = this.todos.indexOf(todo)
     this.todos.splice(index, 1)
-    
-
+  }
+  markAsDone(todo: Todo) {
+    todo.done = "true"
   }
 }
