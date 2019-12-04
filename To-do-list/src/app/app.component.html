@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>To do list</title>
+  <style>
+    body{
+      margin: 0;
+      background-color:slategrey;
+      height: 1000px;
+    }
+    header{
+      text-align: center;
+    }
+    section{
+      position: relative;
+      margin-top: 50px;
+      margin-left: 20%;
+      margin-right: 20%;
+      background-color:aliceblue;
+    }
+    ul{
+      display: inline-block;
+    }
+    li .done{
+      color: red;
+      display: inline;
+      float: right;
+      margin-left: 20px;
+    }
+  
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>To do list</h1>
+  </header>
+  <section>
+    <div class="c1">
+      <ul>
+        <li *ngFor="let todo of todos"> {{todo.title}} <div class="done">{{todo.done}}</div> </li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+
+  </footer>
+</body>
+</html>
