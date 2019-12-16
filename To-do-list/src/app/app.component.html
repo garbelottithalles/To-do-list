@@ -11,17 +11,17 @@
   <section>
       <ul>
         <li *ngFor="let todo of todos">
+          <span *ngIf="todo.done" (click)="markAsNotDone(todo)">✔</span>
           {{todo.title}} 
           <div class="right-elements">
-            <button class="dnButton" (click)="markAsDone(todo)">✔</button>
-            <button class="rmButton" (click)="rmTodo(todo)">&#x2717;</button>
-           <span *ngIf="todo.done"> OK </span>
+            <button class="rmButton" (click)="rmTodo(todo)">DELETE</button>
+            <button class="dnButton" (click)="markAsDone(todo)">DONE</button>
           </div>
         </li>
       </ul>
       <form [formGroup]="form">
         <input type="text" formControlName="title">
-        <button class="add" (click)="addTodo()">Add to list</button>
+        <button class="add" (click)="addTodo()">Add To List</button>
       </form>
   </section>
 </body>

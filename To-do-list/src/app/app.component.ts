@@ -28,7 +28,7 @@ export class AppComponent {
   }
   addTodo() {
     const title = this.form.controls['title'].value;
-    this.todos.push(new Todo( title, false ));
+    this.todos.push(new Todo( title, null));
     this.form.reset()
   }
   rmTodo(todo: Todo) {
@@ -37,5 +37,8 @@ export class AppComponent {
   }
   markAsDone(todo: Todo) {
     todo.done = true;
+  }
+  markAsNotDone(todo: Todo) {
+    todo.done = false;
   }
 }
