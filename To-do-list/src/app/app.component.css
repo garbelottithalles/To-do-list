@@ -1,0 +1,65 @@
+  body {
+    height: 980px;
+    margin: -8px;
+    background-color: black;
+  }
+  h1 {
+      top: 30px;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      color: whitesmoke;
+  }
+  section {
+    position: relative;
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  li{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 15px;
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: 20px;
+    border-bottom: solid 0.5px whitesmoke;
+  }
+  li button{
+    position: relative;
+    float: right; 
+    margin-right: 5px;
+    border-radius: 5px;
+  }
+  .rmButton{
+    background-color: red;
+    font-weight: 600;
+    border: none;
+  }
+  .dnButton{
+    background-color: seagreen;
+    border: none;
+  }
+  input{
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 2%;
+    width: 54%;
+    height: 25x;
+    background-color: whitesmoke;
+  }
+  .add{
+    padding: 7px;
+    margin-bottom:10px;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+  span{
+    color:seagreen;
+    font-weight: 700;
+
+  }
+  .right-elements{
+    display: inline;
+    margin-right: 25px;
+  }

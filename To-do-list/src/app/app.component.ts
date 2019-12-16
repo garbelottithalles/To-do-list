@@ -7,6 +7,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   public form: FormGroup;
   public todos: Todo[] = [];
@@ -19,25 +20,22 @@ export class AppComponent {
           Validators.required
         ])]
       })
-
       this.load()
     }
 
-    load() {
-      this.todos.push()
+  load() {
+    this.todos.push()
   }
-
-  addTodo(){
-    const title = this.form.controls['title'].value
-    this.todos.push(new Todo( title, false ))
+  addTodo() {
+    const title = this.form.controls['title'].value;
+    this.todos.push(new Todo( title, false ));
     this.form.reset()
   }
-
   rmTodo(todo: Todo) {
-    const index = this.todos.indexOf(todo)
+    const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1)
   }
   markAsDone(todo: Todo) {
-    todo.done = "true"
+    todo.done = true;
   }
 }

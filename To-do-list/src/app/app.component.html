@@ -5,63 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>To do list</title>
-  <style>
-    body{
-      margin: 0;
-      background-color:slategrey;
-      height: 1000px;
-    }
-    header{
-      text-align: center;
-    }
-    section{
-      position: relative;
-      margin-top: 30px;
-      background-color:aliceblue;
-      width: 280px;
-      margin-left: 30%;
-    }
-    li{
-      height: 30px;
-      width: 200px;
-    }
-    li button{
-      position: relative;
-      float: right;
-    }
-    input{
-      margin-bottom:10px;
-      margin-left: 10px;
-      margin-top: 10px;
-    }
-    .add{
-      margin-bottom:10px;
-      margin-right: 10px;
-      margin-top: 5px;
-    }
-    .add{
-      padding: 5px;
-      border-radius: 5px;
-      float: right;
-      background-color:orangered;
-    }
-    span{
-      color:seagreen;
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <h1>To do list</h1>
-  </header>
+    <h1> To do List </h1>
   <section>
       <ul>
         <li *ngFor="let todo of todos">
-          <span *ngIf="todo.done"> OK </span>
           {{todo.title}} 
-          <button (click)="markAsDone(todo)">✔</button>
-          <button (click)="rmTodo(todo)">&#x2717;</button>
-          
+          <div class="right-elements">
+            <button class="dnButton" (click)="markAsDone(todo)">✔</button>
+            <button class="rmButton" (click)="rmTodo(todo)">&#x2717;</button>
+           <span *ngIf="todo.done"> OK </span>
+          </div>
         </li>
       </ul>
       <form [formGroup]="form">
